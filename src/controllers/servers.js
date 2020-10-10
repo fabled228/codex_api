@@ -20,7 +20,7 @@ export default class ServersController {
   static async create(req, res) {
     const server = new Server({
       name: req.body.name,
-      serverId: req.body.serverId,
+      workspaceId: req.body.workspaceId,
     });
     try {
       const new_server = await server.save();

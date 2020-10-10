@@ -7,12 +7,12 @@ import workspaceRoutes from './routes/workspaces';
 
 const app = express();
 
-mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@codexdb.damdt.mongodb.net/codexdatabase?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@codexdb.pavdx.mongodb.net/Codex?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   },
-  console.log('Connect to database is successful'));
+  console.log('Connect to database is successful')).catch(console.log);
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
