@@ -56,8 +56,10 @@ export default class WorkspacesController {
     const id = req.params.workspaceId;
     try {
       await Workspace.deleteOne({ _id: id });
-      const serversId = await Server.find({ workspaceId: id });
-      await Project.deleteMany({ serverId: serversId.map() });
+      const serversId = await Server.find({ workspaceId: id }).select('_id');
+      for (const serverId of serversId) {
+        await Project.deleteMany({ serverId });
+      }
       await Server.deleteMany({ workspaceId: id });
       res.json({
         message: 'Workspace deleted',

@@ -7,7 +7,7 @@ import workspaceRoutes from './routes/workspaces';
 
 const app = express();
 
-mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@cluster0.damdt.mongodb.net/<dbname>?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@codexdb.damdt.mongodb.net/codexdatabase?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
