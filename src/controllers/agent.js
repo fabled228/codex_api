@@ -3,7 +3,6 @@ import Server from '../models/server';
 
 export default class AgentController {
   static async create(req, res) {
-    console.log(req.body);
     try {
       const server = await Server.findOne({ name: req.body.serverName });
       if (!server) {
@@ -28,7 +27,6 @@ export default class AgentController {
         message: 'OKAY',
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json({
         message: 'NOT OKAY',
       });

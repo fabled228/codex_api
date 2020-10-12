@@ -11,7 +11,6 @@ export default class ProjectsController {
         })),
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json(error);
     }
   }
@@ -28,7 +27,6 @@ export default class ProjectsController {
         created_project: new_project,
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json({
         message: 'No project created',
       });

@@ -12,7 +12,6 @@ export default class ServersController {
         })),
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json(error);
     }
   }
@@ -29,7 +28,6 @@ export default class ServersController {
         created_server: new_server,
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json({
         message: 'No server created',
       });

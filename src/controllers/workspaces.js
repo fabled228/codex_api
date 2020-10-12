@@ -13,7 +13,6 @@ export default class WorkspacesController {
         })),
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json(error);
     }
   }
@@ -29,7 +28,6 @@ export default class WorkspacesController {
         created_workspace: new_workspace,
       });
     } catch (error) {
-      console.log(error);
       return res.status(400).json({
         message: 'No workspace created',
       });
