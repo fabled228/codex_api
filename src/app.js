@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import projectRoutes from './routes/projects';
 import serverRoutes from './routes/servers';
 import workspaceRoutes from './routes/workspaces';
+import agentRoutes from './routes/agent';
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/agents', agentRoutes);
 app.use('/projects', projectRoutes);
 app.use('/servers', serverRoutes);
 app.use('/workspaces', workspaceRoutes);
