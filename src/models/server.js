@@ -2,12 +2,15 @@ import mongoose from 'mongoose';
 
 const ServerSchema = mongoose.Schema({
   /**
-   * Поля схемы сервера: имя и ID воркспейса,к которому он принадлежит
+   * Имя сервера
    */
   name: {
     type: String,
     required: true,
   },
+  /**
+   * ID сервера,к которому принадлежит
+   */
   workspaceId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
