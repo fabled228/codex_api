@@ -1,6 +1,12 @@
 import Project from '../models/project';
 
+/**
+ * Класс ProjectsController.
+ */
 export default class ProjectsController {
+  /**
+   * Возвращает все проекты
+   */
   static async getAll(req, res) {
     try {
       const projects = await Project.find().select('_id name serverId');
@@ -15,6 +21,9 @@ export default class ProjectsController {
     }
   }
 
+  /**
+   * Создает новый проект
+   */
   static async create(req, res) {
     const project = new Project({
       name: req.body.name,
@@ -33,6 +42,9 @@ export default class ProjectsController {
     }
   }
 
+  /**
+   * Возвращает один проект
+   */
   static async get(req, res) {
     const id = req.params.projectId;
     try {
@@ -49,6 +61,9 @@ export default class ProjectsController {
     }
   }
 
+  /**
+   * Удаляет один проект
+   */
   static async delete(req, res) {
     const id = req.params.projectId;
     try {

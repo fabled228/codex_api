@@ -3,6 +3,6 @@ import AgentController from '../controllers/agent';
 
 const router = express.Router();
 
-router.post('/', AgentController.create);
+router.post('/', AgentController.checkProject);
 
 export default router;

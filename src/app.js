@@ -8,7 +8,7 @@ import agentRoutes from './routes/agent';
 
 const app = express();
 
-mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@codexdb.pavdx.mongodb.net/Codex?retryWrites=true&w=majority`,
+mongoose.connect(process.env.MONGO_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

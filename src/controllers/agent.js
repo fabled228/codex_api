@@ -1,8 +1,14 @@
 import Project from '../models/project';
 import Server from '../models/server';
 
+/**
+ * Класс AgentController.
+ */
 export default class AgentController {
-  static async create(req, res) {
+  /**
+   * Проверяет наличие проекта, затем, при отсутствии, создает новый
+   */
+  static async checkProject(req, res) {
     try {
       const server = await Server.findOne({ name: req.body.serverName });
       if (!server) {

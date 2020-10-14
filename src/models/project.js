@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
 const ProjectSchema = mongoose.Schema({
+  /**
+   * Поля схемы проекта: имя и ID сервера,к которому он принадлежит
+   */
   name: {
     type: String,
     required: true,

@@ -2,7 +2,13 @@ import Workspace from '../models/workspace';
 import Project from '../models/project';
 import Server from '../models/server';
 
+/**
+ * Класс WorkspacesController.
+ */
 export default class WorkspacesController {
+  /**
+   * Возвращает все воркспейсы
+   */
   static async getAll(req, res) {
     try {
       const workspaces = await Workspace.find().select('_id name ');
@@ -17,6 +23,9 @@ export default class WorkspacesController {
     }
   }
 
+  /**
+   * Создает воркспейс
+   */
   static async create(req, res) {
     const workspace = new Workspace({
       name: req.body.name,
@@ -34,6 +43,9 @@ export default class WorkspacesController {
     }
   }
 
+  /**
+   * Возвращает один сервер
+   */
   static async get(req, res) {
     const id = req.params.workspaceId;
     try {
@@ -50,6 +62,9 @@ export default class WorkspacesController {
     }
   }
 
+  /**
+   * Удаляет сервер
+   */
   static async delete(req, res) {
     const id = req.params.workspaceId;
     try {

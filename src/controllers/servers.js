@@ -1,7 +1,13 @@
 import Server from '../models/server';
 import Project from '../models/project';
 
+/**
+ * Класс ServersController.
+ */
 export default class ServersController {
+  /**
+   * Возвращает все серверы
+   */
   static async getAll(req, res) {
     try {
       const servers = await Server.find().select('_id name workspaceId');
@@ -16,6 +22,9 @@ export default class ServersController {
     }
   }
 
+  /**
+   * Создает новый сервер
+   */
   static async create(req, res) {
     const server = new Server({
       name: req.body.name,
@@ -34,6 +43,9 @@ export default class ServersController {
     }
   }
 
+  /**
+   * Возвращает один сервер
+   */
   static async get(req, res) {
     const id = req.params.serverId;
     try {
@@ -50,6 +62,9 @@ export default class ServersController {
     }
   }
 
+  /**
+   * Удаляет сервер
+   */
   static async delete(req, res) {
     const id = req.params.serverId;
     try {
